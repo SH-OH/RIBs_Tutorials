@@ -41,6 +41,7 @@ final class LoggedOutBuilder: Builder<LoggedOutDependency>, LoggedOutBuildable {
     func build(withListener listener: LoggedOutListener) -> LoggedOutRouting {
         _ = LoggedOutComponent(dependency: dependency)
         let viewController = LoggedOutViewController()
+        viewController.modalPresentationStyle = .fullScreen
         let interactor = LoggedOutInteractor(presenter: viewController)
         interactor.listener = listener
         return LoggedOutRouter(interactor: interactor, viewController: viewController)
