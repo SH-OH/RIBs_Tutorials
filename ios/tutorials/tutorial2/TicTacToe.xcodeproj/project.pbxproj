@@ -10,6 +10,7 @@
 		7EDD59501FA13579005EC8B2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EDD594F1FA13579005EC8B2 /* Default-568h@2x.png */; };
 		902781EB24A674D0368A3917 /* Pods_TicTacToeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D008FD5813F6BDE9C4955F5C /* Pods_TicTacToeTests.framework */; };
 		AEFA38604D7D1E4A08E9A7FA /* Pods_TicTacToe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99EABB5C8D25341027C05C5 /* Pods_TicTacToe.framework */; };
+		CB4035ED23916FF40010C84E /* RootRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4035EC23916FF40010C84E /* RootRouterTests.swift */; };
 		CB9CD384237840810039221E /* LoggedInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9CD381237840810039221E /* LoggedInRouter.swift */; };
 		CB9CD385237840810039221E /* LoggedInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9CD382237840810039221E /* LoggedInBuilder.swift */; };
 		CB9CD386237840810039221E /* LoggedInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9CD383237840810039221E /* LoggedInInteractor.swift */; };
@@ -53,6 +54,7 @@
 		833B15CABE3CBE09720A0409 /* Pods-TicTacToe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TicTacToe/Pods-TicTacToe.debug.xcconfig"; sourceTree = "<group>"; };
 		A791EBDAD202886E66137B9C /* Pods-TicTacToe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe.release.xcconfig"; path = "Pods/Target Support Files/Pods-TicTacToe/Pods-TicTacToe.release.xcconfig"; sourceTree = "<group>"; };
 		B99EABB5C8D25341027C05C5 /* Pods_TicTacToe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TicTacToe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB4035EC23916FF40010C84E /* RootRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouterTests.swift; sourceTree = "<group>"; };
 		CB9CD381237840810039221E /* LoggedInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInRouter.swift; sourceTree = "<group>"; };
 		CB9CD382237840810039221E /* LoggedInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInBuilder.swift; sourceTree = "<group>"; };
 		CB9CD383237840810039221E /* LoggedInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInInteractor.swift; sourceTree = "<group>"; };
@@ -174,8 +176,9 @@
 		E9C86D881FA3586500B61DF6 /* TicTacToeTests */ = {
 			isa = PBXGroup;
 			children = (
-				E9C86D891FA3586500B61DF6 /* TicTacToeMocks.swift */,
 				E9C86D8B1FA3586500B61DF6 /* Info.plist */,
+				CB4035EC23916FF40010C84E /* RootRouterTests.swift */,
+				E9C86D891FA3586500B61DF6 /* TicTacToeMocks.swift */,
 			);
 			path = TicTacToeTests;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB4035ED23916FF40010C84E /* RootRouterTests.swift in Sources */,
 				E9C86D8A1FA3586500B61DF6 /* TicTacToeMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

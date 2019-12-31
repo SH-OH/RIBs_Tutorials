@@ -25,6 +25,5 @@ protocol LoggedInDependencyTicTacToe: Dependency {
 }
 
 extension LoggedInComponent: TicTacToeDependency {
-
-    // TODO: Implement properties to provide for TicTacToe scope.
+    
 }

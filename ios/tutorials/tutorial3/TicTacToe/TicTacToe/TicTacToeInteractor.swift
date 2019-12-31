@@ -24,11 +24,11 @@ protocol TicTacToeRouting: ViewableRouting {
 protocol TicTacToePresentable: Presentable {
     var listener: TicTacToePresentableListener? { get set }
     func setCell(atRow row: Int, col: Int, withPlayerType playerType: PlayerType)
-    func announce(winner: PlayerType)
+    func announce(winner: PlayerType?, withCompletionHandler handler: @escaping () -> ())
 }
 
 protocol TicTacToeListener: class {
-    func gameDidEnd()
+    func gameDidEnd(withWinner winner: PlayerType?)
 }
 
 final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, TicTacToeInteractable, TicTacToePresentableListener {
@@ -39,6 +39,7 @@ final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, Ti
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
+    
     override init(presenter: TicTacToePresentable) {
         super.init(presenter: presenter)
         presenter.listener = self
@@ -67,14 +68,12 @@ final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, Ti
         presenter.setCell(atRow: row, col: col, withPlayerType: currentPlayer)
 
         if let winner = checkWinner() {
-            presenter.announce(winner: winner)
+            presenter.announce(winner: winner, withCompletionHandler: {
+                self.listener?.gameDidEnd(withWinner: winner)
+            })
         }
     }
-
-    func closeGame() {
-        listener?.gameDidEnd()
-    }
-
+    
     // MARK: - Private
 
     private var currentPlayer = PlayerType.player1
@@ -142,8 +141,16 @@ final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, Ti
                 return p11
             }
         }
-
-        return nil
+        
+        // Draw
+        for col in 0..<GameConstants.colCount {
+            for row in 0..<GameConstants.rowCount {
+                guard board[row][col] != nil else {
+                    return nil
+                }
+            }
+        }
+        return .draw
     }
 }
 
